@@ -32,7 +32,7 @@ RUN npm install -g bower && npm update -g bower
 RUN npm install -g gulp && npm update -g gulp
 RUN npm install -g uglifycss && npm update -g uglifycss
 
-COPY vhost.prod.conf /etc/nginx/sites-available/default
+COPY vhost.conf /etc/nginx/sites-available/default
 COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 COPY init.sh /init.sh
 
