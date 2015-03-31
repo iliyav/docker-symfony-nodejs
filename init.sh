@@ -6,6 +6,8 @@ case "$ENV" in
     npm install --production
     bower install --allow-root
     gulp build --env=prod
+    cp app/config/supervisor/*.conf /etc/supervisor/conf.d
+    php app/console doctrine:migrations:migrate --no-interaction --env=prod
     mkdir cronlog && chmod 777 cronlog
     crontab -u www-data app/config/crontab
     chmod -R a+w app/cache/prod
